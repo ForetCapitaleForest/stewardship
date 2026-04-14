@@ -1,4 +1,4 @@
-export type SiteType = 'park' | 'street' | 'community-garden' | 'natural-area';
+export type SiteType = 'standard-planting' | 'private-property' | 'food-forest' | 'tiny-forest';
 export type SiteStatus = 'active' | 'seasonal' | 'inactive';
 
 export interface Coordinates {

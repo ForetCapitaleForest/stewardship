@@ -20,25 +20,29 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-400 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="bg-primary-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          }}></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6">
-              Growing Greener Communities Together
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Planting trees with a visionary plan
             </h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Join our community of dedicated volunteers caring for trees and green spaces
-              across our city. Make a difference, one tree at a time.
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+              We engage the local community to plant trees, link ecosystems, and steward resilient urban forests through private and public landowner collaboration.
             </p>
             <div className="flex justify-center space-x-4">
               <Link to="/login">
-                <Button size="lg" variant="secondary">
-                  Get Started
+                <Button size="lg" className="bg-secondary-500 hover:bg-secondary-600 text-white border-0">
+                  Get Involved
                 </Button>
               </Link>
               <Link to="/sites">
-                <Button size="lg" variant="outline" className="bg-white text-primary-500 border-white hover:bg-gray-100">
-                  Explore Sites
+                <Button size="lg" variant="outline" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary-500">
+                  View Projects
                 </Button>
               </Link>
             </div>
@@ -80,11 +84,44 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Mission Section */}
+      <div className="bg-primary-700 text-white py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Our Mission
+              </h2>
+              <p className="text-lg mb-4 leading-relaxed">
+                Based in Ottawa, Ontario, Forêt Capitale Forest is a registered charity with a mission to mitigate the effects of climate change by facilitating the planting of forests and raising awareness of the importance of trees and biodiversity.
+              </p>
+              <p className="text-lg leading-relaxed">
+                We engage the local community to plant trees, link ecosystems, and steward resilient urban forests through private and public landowner collaboration.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <svg width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="140" r="50" fill="currentColor" opacity="0.2"/>
+                <path d="M60 180 L60 100 M60 100 Q60 70 80 60 M60 100 Q60 70 40 60" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+                <path d="M100 180 L100 90 M100 90 Q100 60 120 50 M100 90 Q100 60 80 50" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+                <path d="M140 180 L140 100 M140 100 Q140 70 160 60 M140 100 Q140 70 120 60" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+                <circle cx="80" cy="58" r="6" fill="currentColor"/>
+                <circle cx="40" cy="58" r="6" fill="currentColor"/>
+                <circle cx="120" cy="48" r="6" fill="currentColor"/>
+                <circle cx="80" cy="48" r="6" fill="currentColor"/>
+                <circle cx="160" cy="58" r="6" fill="currentColor"/>
+                <circle cx="120" cy="58" r="6" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            How It Works
+            How to Get Involved
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Join our community and start making a difference in just a few simple steps
@@ -92,9 +129,9 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="bg-primary-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-primary-600">1</span>
+          <div className="text-center p-6">
+            <div className="bg-primary-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold">1</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">Sign Up</h3>
             <p className="text-gray-600">
@@ -102,39 +139,39 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="bg-secondary-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-secondary-600">2</span>
+          <div className="text-center p-6">
+            <div className="bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold">2</span>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Choose Activities</h3>
+            <h3 className="text-xl font-semibold mb-2">Join a Planting</h3>
             <p className="text-gray-600">
-              Browse available sites and sign up for tree care activities that match your schedule
+              Browse available sites and sign up for tree planting activities that match your schedule
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-green-600">3</span>
+          <div className="text-center p-6">
+            <div className="bg-primary-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold">3</span>
             </div>
             <h3 className="text-xl font-semibold mb-2">Make an Impact</h3>
             <p className="text-gray-600">
-              Participate in activities, log your hours, and watch your impact grow
+              Participate in activities, log your hours, and help build resilient urban forests
             </p>
           </div>
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="bg-primary-50 py-16">
+      <div className="bg-primary-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Join our community of volunteers and help us create a greener future
+          <p className="text-xl mb-8">
+            Join our community of volunteers and help us mitigate climate change through urban forestry
           </p>
           <Link to="/login">
-            <Button size="lg">
+            <Button size="lg" className="bg-secondary-500 hover:bg-secondary-600 text-white border-0">
               Become a Volunteer
             </Button>
           </Link>

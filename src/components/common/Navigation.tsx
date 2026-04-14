@@ -35,8 +35,22 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold">🌳 Stewardship</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 80 L30 50 M30 50 Q30 35 40 30 M30 50 Q30 35 20 30" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M50 80 L50 45 M50 45 Q50 30 60 25 M50 45 Q50 30 40 25" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M70 80 L70 50 M70 50 Q70 35 80 30 M70 50 Q70 35 60 30" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                <circle cx="40" cy="28" r="4" fill="white"/>
+                <circle cx="20" cy="28" r="4" fill="white"/>
+                <circle cx="60" cy="23" r="4" fill="white"/>
+                <circle cx="40" cy="23" r="4" fill="white"/>
+                <circle cx="80" cy="28" r="4" fill="white"/>
+                <circle cx="60" cy="28" r="4" fill="white"/>
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold leading-tight">Forêt Capitale</span>
+                <span className="text-xl font-bold leading-tight">Forest</span>
+              </div>
             </Link>
           </div>
 

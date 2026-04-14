@@ -1,8 +1,8 @@
 export const SITE_TYPES = [
-  { value: 'park', label: 'Park' },
-  { value: 'street', label: 'Street' },
-  { value: 'community-garden', label: 'Community Garden' },
-  { value: 'natural-area', label: 'Natural Area' },
+  { value: 'standard-planting', label: 'Standard Planting' },
+  { value: 'private-property', label: 'Private Property' },
+  { value: 'food-forest', label: 'Food Forest' },
+  { value: 'tiny-forest', label: 'Tiny Forest' },
 ] as const;
 
 export const TASK_TYPES = [
