@@ -8,19 +8,28 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const { volunteers, setCurrentUser } = useStore();
   const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [error, setError] = React.useState('');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     
-    // Simple demo login - find volunteer by email
+    // Find volunteer by email and validate password
     const volunteer = Object.values(volunteers).find(v => v.email === email);
     
-    if (volunteer) {
-      setCurrentUser(volunteer.id, volunteer.role);
-      navigate('/dashboard');
-    } else {
-      alert('Volunteer not found. Please check your email or sign up.');
+    if (!volunteer) {
+      setError('Volunteer not found. Please check your email.');
+      return;
     }
+    
+    if (volunteer.password && volunteer.password !== password) {
+      setError('Invalid password. Please try again.');
+      return;
+    }
+    
+    setCurrentUser(volunteer.id, volunteer.role);
+    navigate('/dashboard');
   };
 
   // Demo accounts for testing
@@ -37,6 +46,12 @@ const Login: React.FC = () => {
         <Card>
           <CardBody>
             <form onSubmit={handleLogin} className="space-y-4">
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+                  {error}
+                </div>
+              )}
+              
               <div>
                 <label htmlFor="email" className="label">
                   Email Address
@@ -49,6 +64,21 @@ const Login: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="input-field"
                   placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="password" className="label">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="input-field"
+                  placeholder="Enter your password"
                 />
               </div>
 
@@ -66,7 +96,7 @@ const Login: React.FC = () => {
             </CardHeader>
             <CardBody>
               <p className="text-sm text-gray-600 mb-4">
-                Click to login with a demo account:
+                Click to login with a demo account (password: demo123):
               </p>
               <div className="space-y-2">
                 {demoAccounts.map(volunteer => (

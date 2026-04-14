@@ -36,6 +36,7 @@ export interface Volunteer {
   lastName: string;
   email: string;
   phone: string;
+  password?: string; // Optional for demo purposes, should be hashed in production
   address?: Address;
   joinDate: Date;
   status: VolunteerStatus;
