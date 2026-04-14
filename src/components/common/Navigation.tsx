@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 import { Menu as MenuIcon, X, User, LogOut, Settings } from 'lucide-react';
 import { useStore } from '@/store/useStore';
+import logo from '@/images/fcf_logo_g-1.svg';
 
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -36,8 +37,8 @@ export const Navigation: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/src/images/fcf_logo_g-1.svg" 
+              <img
+                src={logo}
                 alt="Forêt Capitale Forest logo"
                 width="40"
                 height="40"
